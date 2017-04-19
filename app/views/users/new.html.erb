@@ -1,0 +1,25 @@
+<div class="col-md-6">
+  <h2>Register Users</h2>
+  <form action="/register" method="post">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input type="text" name="user[name]" class="form-control" id="name">
+    </div>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="text" name="user[email]" class="form-control" id="email">
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="text" name="user[password]" class="form-control" id="password">
+    </div>
+    <div class="form-group">
+      <label for="password_confirmation">Password Confirmation</label>
+      <input type="text" name="user[password_confirmation]" class="form-control" id="Password_Confirmation">
+    </div>
+    <div class="form-group">
+      <button type="submit" class="btn btn-primary">Join</button>
+    </div>
+  </form>
+</div>

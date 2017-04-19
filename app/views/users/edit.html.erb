@@ -1,0 +1,21 @@
+<h1>Edit <%= @user.name %></h1>
+
+<form action="/update/<%= @user.id %>" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <div class="form-group">
+    <label for="name">Name:</label>
+    <input type="text" name="user[name]" class="form-control" id="name" value= "<%= @user.name %>">
+  </div>
+  <div class="form-group">
+    <label for="email">Email:</label>
+    <input type="text" name="user[email]" class="form-control" id="email" value= "<%= @user.email %>">
+  </div>
+  <div class="form-group">
+    <button type="submit" name= 'update' class="btn btn-primary">Update</button>
+  </div>
+</form>
+<form action="/users/<%= @user.id%>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <input type="submit" value="Delete Account">
+</form>

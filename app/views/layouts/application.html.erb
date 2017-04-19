@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DojoSecrets</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+            <a class="navbar-brand" href="#">Ruby Secrets</a>
+      </div>
+  <% if current_user %>
+      <a id='Log Out'class="btn btn-default navbar-btn"  href="/logout">Log Out</a>
+    <% else %>
+      <a class="btn btn-default navbar-btn" href="/join">Join</a>
+  <% end %>
+    </div>
+  </nav>
+  <% if flash %>
+  <% flash.each do |key, value| %>
+    <% Array(value).each do |elem| %>
+      <p style: "color:red" ><%= elem %></p>
+      <% end %>
+    <% end %>
+  <% end %>
+<%= yield %>
+
+</body>
+</html>

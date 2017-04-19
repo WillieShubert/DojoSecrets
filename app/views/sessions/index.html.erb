@@ -1,0 +1,17 @@
+<div class="col-md-6">
+  <h2>Login Users</h2>
+  <form action="/login" method="post">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <div class="form-group">
+      <label for="first_name">Email:</label>
+      <input type="text" name="email" class="form-control" id="Email">
+    </div>
+    <div class="form-group">
+      <label for="last_name">Password</label>
+      <input type="text" name="password" class="form-control" id="Password">
+    </div>
+    <div class="form-group">
+      <button type="submit" name= "Log In" class="btn btn-primary">Log In</button>
+    </div>
+  </form>
+</div>
